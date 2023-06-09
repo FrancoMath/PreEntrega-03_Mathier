@@ -1,0 +1,7 @@
+# Archivos de compilación de Python
+__pycache__/
+*.pyc
+
+# Archivos de pipenv.
+Pipfile
+Pipfile.lock
