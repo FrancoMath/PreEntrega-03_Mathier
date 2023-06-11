@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def inicio(request):
-    return HttpResponse("Vista inicio")
+    return render(request, "AppCorrea/index.html")
 
 def productos(request):
     return HttpResponse("Vista productos")
