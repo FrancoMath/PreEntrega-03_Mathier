@@ -5,13 +5,14 @@ def inicio(request):
     return render(request, "AppCorrea/index.html")
 
 def productos(request):
-    return HttpResponse("Vista productos")
+    return render(request, "AppCorrea/cargar_productos.html")
 
 def clientes(request):
-    return HttpResponse("Vista clientes")
+    return render(request, "AppCorrea/cargar_clientes.html")
 
 def pedidos(request):
-    return HttpResponse("Vista pedidos")
+    return render(request, "AppCorrea/cargar_pedidos.html")
 
-
+def buscar_productos(request):
+    return render(request, "AppCorrea/buscar_productos.html")
 
