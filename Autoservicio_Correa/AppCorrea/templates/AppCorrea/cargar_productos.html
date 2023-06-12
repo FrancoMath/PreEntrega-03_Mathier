@@ -10,11 +10,24 @@
     <section id="scroll">
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 order-lg-2">
+                <div class="col-lg-12 order-lg-2">
                 </div>
-                <div class="col-lg-6 order-lg-1">
+                <div class="col-lg-12 order-lg-1">
                     <div class="p-5">
-                        <h2 class="display-4">Cargar Productos!!!</h2>
+                        <h2 class="display-6">
+                            
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <p>Nombre: <input type="text" name="nombre"></p>
+                                <p>Precio: $ <input type="number" name="precio"></p>
+                                <p>Descripción: <input type="text" name="descripcion"></p>
+                                <p>En Stock: <input type="text" name="en_stock"></p>
+                                <p>En Promoción: <input type="text" name="en_promocion"></p>
+                                <input type="submit" value="Enviar">
+                        
+                            </form>
+                        
+                        </h2>
                     </div>
                 </div>
             </div>
