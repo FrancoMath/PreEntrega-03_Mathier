@@ -26,7 +26,7 @@ class Cliente(models.Model):
 
 class Pedido_Basico(models.Model):
     cliente_pedido = models.CharField(max_length=100)
-    fecha_pedido = models.DateTimeField(auto_now_add=True)
+    fecha_pedido = models.DateField()
     horario_entrega = models.CharField(max_length=100)
     detalle_pedido = models.TextField()
 

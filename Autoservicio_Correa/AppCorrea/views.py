@@ -45,6 +45,27 @@ def buscar_productos(request):
     return render(request, "AppCorrea/buscar_productos.html")
 
 
+def buscar(request):
+    if request.GET["fecha_pedido"]:
+        fecha_pedido = request.GET['fecha_pedido']
+        pedidos_basicos = Pedido_Basico.objects.filter(fecha_pedido__icontains=fecha_pedido)
+
+        return render(request, "AppCorrea/leer_pedidos.html", {"pedidos_basicos":pedidos_basicos, 
+        "fecha_pedido":fecha_pedido})
+    
+    else:
+        respuesta = "No enviaste datos"
+    
+    return HttpResponse(respuesta)
+    
+    
+    
+    # respuesta = f"Estoy buscando pedidos con fecha: {request.GET['fecha_pedido']}"
+    # return HttpResponse(respuesta)
+
+
+
+
 
 def leer_productos(request):
     productos = Producto.objects.all()
