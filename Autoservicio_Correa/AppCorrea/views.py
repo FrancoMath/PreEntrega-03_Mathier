@@ -41,8 +41,8 @@ def pedidos_basicos(request):
 # def pedidos(request):
 #     return render(request, "AppCorrea/cargar_pedidos.html")
 
-def buscar_productos(request):
-    return render(request, "AppCorrea/buscar_productos.html")
+def buscar_pedidos(request):
+    return render(request, "AppCorrea/buscar_pedidos.html")
 
 
 def buscar(request):

@@ -20,16 +20,16 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Autoservicio Correa</a>
+                <a class="navbar-brand" href="{% url 'Inicio' %}">Autoservicio Correa</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Clientes' %}">Cargar Clientes</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Pedidos' %}">Cargar Pedidos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Leer Productos' %}">Leer Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Productos' %}">Cargar Productos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Productos' %}">Buscar Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Leer Productos' %}">Leer Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Pedidos' %}">Buscar Pedidos</a></li>
                         <!--li class="nav-item"><a class="nav-link" href="#!">Conocenos</a></li-->
                         <!--li class="nav-item"><a class="nav-link" href="#!">Iniciar sesión</a></li-->
                         <!--li class="nav-item"><a class="nav-link" href="#!">Crear cuenta</a></li-->
@@ -69,7 +69,7 @@
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; PreEntrega-03_Mathier</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
