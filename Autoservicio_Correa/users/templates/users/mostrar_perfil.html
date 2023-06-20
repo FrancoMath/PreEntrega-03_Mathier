@@ -17,10 +17,11 @@
                            <!-- action: representa la url a la que nos va a re-dirigir. Tiene prioridad
     por sobre la redirección que podamos colocar en views.py -->
                   
-                        <h1>Formulario - Mostrar Perfil</h1>
-                        <h1>De: {{usuario}}</h1>
+                        <h1>Mostrar Perfil</h1>
+                        <h1>De: {{request.user.username}}</h1>
 
-                        <h5 class="mb-1">{{ request.user.first_name }} {{ request.user.last_name }}</h5>
+                        <h5 class="mb-1">Nombre: {{ request.user.first_name }}</h5>
+                        <h5 class="mb-1">Apellido: {{ request.user.last_name }}</h5>
                         <p class="mb-2 pb-1" style="color: #2b2a2a;">Email: {{request.user.email}}</p>
 
 

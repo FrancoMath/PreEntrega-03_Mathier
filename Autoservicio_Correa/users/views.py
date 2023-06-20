@@ -42,19 +42,19 @@ def register(request):
 
     if request.method == 'POST':
 
-        # form = UserCreationForm(request.POST)
-        form = UserRegisterForm(request.POST)
+        #form = UserCreationForm(request.POST)
+        form = forms.UserRegisterForm(request.POST)
         if form.is_valid():
-
             username = form.cleaned_data['username']
             form.save()
             return render(request,"AppCorrea/index.html" ,  {"mensaje":"Usuario Creado :)"})
 
     else:
-        # form = UserCreationForm()       
-        form = UserRegisterForm()     
+        #form = UserCreationForm()       
+        form = forms.UserRegisterForm()     
 
     return render(request,"users/register.html" ,  {"form":form})
+
 
 # Editar perfiles
 @login_required
@@ -74,7 +74,7 @@ def editar_perfil(request):
 
             modelo_perfil.save()
             usuario.save()
-            return redirect("mostrar_perfil")
+            return redirect("Mostrar_perfil")
         else:
             return render(request, 'users/editar_perfil.html', {'form': form})
 
@@ -87,3 +87,8 @@ def editar_perfil(request):
         }
     )
     return render(request, 'users/editar_perfil.html', {'form': form})
+
+# Mostrar pefiles
+@login_required
+def mostrar_perfil(request):
+    return render(request, 'users/mostrar_perfil.html')
