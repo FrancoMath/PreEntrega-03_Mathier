@@ -102,3 +102,8 @@ class CambiarPassword(LoginRequiredMixin, PasswordChangeView):
 
 class Logout(LoginRequiredMixin, LogoutView):
     template_name = 'users/logout.html'
+
+class EliminarPerfil(LoginRequiredMixin, DeleteView):
+    model = User
+    success_url = reverse_lazy("Inicio")
+    template_name = 'users/eliminar_perfil.html'

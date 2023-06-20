@@ -1,0 +1,36 @@
+{% extends 'AppCorrea/base.html' %}
+
+{% load static %}
+
+{% block title %} Eliminar Perfil {% endblock title %}
+
+{% block main %}
+
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                           <!-- action: representa la url a la que nos va a re-dirigir. Tiene prioridad
+    por sobre la redirección que podamos colocar en views.py -->
+
+                        <form action="{% url 'Eliminar_perfil' user.id %}" method="POST" class="m-2">
+                             {% csrf_token %}
+                            <p>¿Desea eliminar el perfil?</p>
+                            <input type="submit" value="Confirmar" class="btn btn-primary">
+                            <a href="{% url 'Inicio' %}"><button class="btn btn-primary m-2" type="button">Cancelar</button></a>
+                         </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock main %}
+
+
+
