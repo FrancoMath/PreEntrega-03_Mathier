@@ -1,9 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+from django.views.generic import DeleteView
 
-
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, logout, authenticate
-from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView, LogoutView
+
+from users import models, forms
+
 
 # Create your views here.
 def login_request(request):
@@ -48,3 +55,35 @@ def register(request):
         form = UserRegisterForm()     
 
     return render(request,"users/register.html" ,  {"form":form})
+
+# Editar perfiles
+@login_required
+def editar_perfil(request):
+    usuario = request.user
+    modelo_perfil, _ = models.Perfil.objects.get_or_create(user=usuario)
+    if request.method == "POST":
+        form = forms.EditarUsuarioForm(request.POST, request.FILES)
+        if form.is_valid():
+            data = form.cleaned_data
+            if data.get('first_name'):
+                usuario.first_name = data.get('first_name')
+            if data.get('last_name'):
+                usuario.last_name = data.get('last_name')
+            usuario.email = data.get('email') if data.get('email') else usuario.email
+
+
+            modelo_perfil.save()
+            usuario.save()
+            return redirect("mostrar_perfil")
+        else:
+            return render(request, 'users/editar_perfil.html', {'form': form})
+
+    form = forms.EditarUsuarioForm(
+        initial={
+            'email': usuario.email,
+            'first_name': usuario.first_name,
+            'last_name': usuario.last_name,
+
+        }
+    )
+    return render(request, 'users/editar_perfil.html', {'form': form})

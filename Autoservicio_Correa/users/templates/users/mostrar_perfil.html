@@ -1,0 +1,37 @@
+{% extends 'AppCorrea/base.html' %}
+
+{% load static %}
+
+{% block title %} Mostrar perfil {% endblock title %}
+
+{% block main %}
+
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-2">
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="p-5">
+                           <!-- action: representa la url a la que nos va a re-dirigir. Tiene prioridad
+    por sobre la redirección que podamos colocar en views.py -->
+                  
+                        <h1>Formulario - Mostrar Perfil</h1>
+                        <h1>De: {{usuario}}</h1>
+
+                        <h5 class="mb-1">{{ request.user.first_name }} {{ request.user.last_name }}</h5>
+                        <p class="mb-2 pb-1" style="color: #2b2a2a;">Email: {{request.user.email}}</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock main %}
+
+
+

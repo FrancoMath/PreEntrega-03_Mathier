@@ -13,3 +13,11 @@ class UserRegisterForm(UserCreationForm):
         # Si queremos EDIAR los mensajes de ayuda editamos este dict,
             # de lo contrario lo limpiamos de ésta forma.
         help_text = {k: "" for k in fields}
+
+
+
+class EditarUsuarioForm(forms.Form):
+    email = forms.EmailField(required=False)
+    first_name = forms.CharField(label='Nombre', max_length=30, required=False)
+    last_name = forms.CharField(label='Apellido', max_length=30, required=False)
+    avatar = forms.ImageField(required=False)
