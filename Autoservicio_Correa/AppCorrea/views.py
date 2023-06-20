@@ -38,6 +38,8 @@ def pedidos_basicos(request):
     return render(request,"AppCorrea/cargar_pedidos.html")
 
 
+
+
 # def pedidos(request):
 #     return render(request, "AppCorrea/cargar_pedidos.html")
 
