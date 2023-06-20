@@ -29,12 +29,19 @@
                         <li class="nav-item"><a class="nav-link" href="">Promociones</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
-
-
+                        
+                        {% if user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mis Pedidos</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'Cargar Pedidos' %}">Cargar Pedidos</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Ver mis Pedidos</a></li>
+                            </ul>
+                        {% endif %}
 
 
                         <!--li class="nav-item"><a class="nav-link" href="{% url 'Cargar Clientes' %}">Cargar Clientes</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Pedidos' %}">Cargar Pedidos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Productos' %}">Cargar Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Leer Productos' %}">Leer Productos</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Pedidos' %}">Buscar Pedidos</a></li-->

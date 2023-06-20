@@ -94,15 +94,16 @@ def mostrar_perfil(request):
     return render(request, 'users/mostrar_perfil.html')
 
 
-# Cambiar contraseña
-
+# Cambiar Contraseña
 class CambiarPassword(LoginRequiredMixin, PasswordChangeView):
     template_name = 'users/cambiar_password.html'
     success_url = reverse_lazy("Mostrar_perfil")
 
+# Logout
 class Logout(LoginRequiredMixin, LogoutView):
     template_name = 'users/logout.html'
 
+# Eliminar Perfil
 class EliminarPerfil(LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy("Inicio")

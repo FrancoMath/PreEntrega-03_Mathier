@@ -2,13 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Producto, Cliente, Pedido_Basico
 
-#from django.contrib.auth.decorators import login_required
-#@login_required
-
 def inicio(request):
     return render(request, "AppCorrea/index.html")
-
-
 
 def productos(request):
     if request.method == 'POST':
