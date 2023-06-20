@@ -12,7 +12,7 @@ from django.contrib.auth.views import PasswordChangeView, LogoutView
 from users import models, forms
 
 
-# Create your views here.
+# Vista de Login
 def login_request(request):
 
     if request.method == 'POST':
@@ -92,3 +92,13 @@ def editar_perfil(request):
 @login_required
 def mostrar_perfil(request):
     return render(request, 'users/mostrar_perfil.html')
+
+
+# Cambiar contraseña
+
+class CambiarPassword(LoginRequiredMixin, PasswordChangeView):
+    template_name = 'users/cambiar_password.html'
+    success_url = reverse_lazy("Mostrar_perfil")
+
+class Logout(LoginRequiredMixin, LogoutView):
+    template_name = 'users/logout.html'
