@@ -30,6 +30,17 @@ class Pedido_Basico(models.Model):
     horario_entrega = models.CharField(max_length=100)
     detalle_pedido = models.TextField()
 
+class Promocion(models.Model):
+    fecha_inicio = models.DateField()
+    fecha_fin = models.DateField()
+    titulo_promo = models.CharField(max_length=100)
+    descripcion_promo = models.TextField()
+    precio_promo = models.DecimalField(max_digits=8, decimal_places=2)
+    estado_promo = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"Promo: {self.titulo_promo} \n - Fin: {self.fecha_fin} - Estado: {self.estado_promo} "
+
 
 # class Pedido(models.Model):
 #     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)

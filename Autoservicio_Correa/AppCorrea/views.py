@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Producto, Cliente, Pedido_Basico
+from .models import Producto, Cliente, Pedido_Basico, Promocion
 
 def inicio(request):
     return render(request, "AppCorrea/index.html")
@@ -38,6 +38,21 @@ def pedidos_basicos(request):
     return render(request,"AppCorrea/cargar_pedidos.html")
 
 
+
+def promociones(request):
+    if request.method == 'POST':
+        promocion = Promocion(fecha_inicio=request.POST['fecha_inicio'], fecha_fin=request.POST['fecha_fin'],
+        titulo_promo=request.POST['titulo_promo'], descripcion_promo=request.POST['descripcion_promo'], 
+        precio_promo=request.POST['precio_promo'], estado_promo=request.POST['estado_promo'], )
+        promocion.save()
+        return render (request, "AppCorrea/index.html")
+ 
+    return render(request,"AppCorrea/cargar_promocion.html")
+
+def leer_promociones(request):
+    promociones = Promocion.objects.all()
+    contexto = {"promociones":promociones}
+    return render(request, "AppCorrea/leer_promociones.html", contexto)
 
 
 # def pedidos(request):
