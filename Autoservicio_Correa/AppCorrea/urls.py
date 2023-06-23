@@ -1,5 +1,5 @@
 from django.urls import path
-from AppCorrea import views
+from AppCorrea import views, class_views
 
 urlpatterns = [
     path('', views.inicio, name="Inicio"),
@@ -12,4 +12,12 @@ urlpatterns = [
     path('cargar_promocion/', views.promociones, name="Cargar Promociones"),
     path('leer_promociones/', views.leer_promociones, name="Leer Promociones"),
     path('buscar/', views.buscar),
+]
+
+
+# URL's basadas en clases
+urlpatterns += [
+    path('editar_promocion/<pk>/', class_views.PromocionUpdateView.as_view(), name="Editar Promocion"),
+    path('eliminar_promocion/<pk>/', class_views.PromocionDeleteView.as_view(), name="Eliminar Promocion"),
+    path('detalle_promocion/<pk>/', class_views.PromocionDetailView.as_view(), name="Detalle Promocion"),
 ]

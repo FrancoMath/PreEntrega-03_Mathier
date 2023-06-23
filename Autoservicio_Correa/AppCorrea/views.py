@@ -55,6 +55,9 @@ def leer_promociones(request):
     return render(request, "AppCorrea/leer_promociones.html", contexto)
 
 
+
+
+
 # def pedidos(request):
 #     return render(request, "AppCorrea/cargar_pedidos.html")
 

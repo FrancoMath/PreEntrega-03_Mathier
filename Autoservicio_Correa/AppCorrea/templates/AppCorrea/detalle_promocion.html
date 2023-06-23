@@ -1,0 +1,39 @@
+{% extends 'AppCorrea/base.html' %}
+
+{% load static %}
+
+{% block title %} Detalle Promoción {% endblock title %}
+
+{% block main %}
+
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-12 order-lg-2">
+                </div>
+                <div class="col-lg-12 order-lg-1">
+                    <div class="p-5">
+                        <h2 class="display-6">
+                            
+                            Promoción: {{ promocion.titulo_promo }}<br>
+                            Fecha Inicio: {{ promocion.fecha_inicio }}<br>
+                            Fecha Fin: {{ promocion.fecha_fin }}<br>
+                            Precio: $ {{ promocion.precio_promo }}<br>
+                            Estado: {{ promocion.estado_promo }}<br>
+                            Detalle: {{ promocion.descripcion_promo }}<br>
+                            <a href="{% url 'Leer Promociones' %}" class="btn btn-primary">Regresar</a></button>
+                           
+                        </h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock main %}
+
+
+
