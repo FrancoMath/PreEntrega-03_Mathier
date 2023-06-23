@@ -8,3 +8,6 @@ Pipfile.lock
 
 # DB
 db.sqlite3
+
+# Archivos de MEDIA (lo dejo comentado para el final)
+#media/**
