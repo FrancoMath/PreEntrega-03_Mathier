@@ -1,7 +1,8 @@
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Promocion, Pedido_Basico
+from .models import Promocion, Pedido_Basico, Comentario
+from .forms import FormularioComentario
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
@@ -49,3 +50,15 @@ class Pedido_BasicoDeleteView(DeleteView):
     model = Pedido_Basico
     success_url = reverse_lazy("Leer Mis Pedidos")
     template_name = 'AppCorrea/eliminar_pedido.html'
+
+
+
+class ComentarioPagina(LoginRequiredMixin, CreateView):
+    model = Comentario
+    form_class = FormularioComentario
+    template_name = 'AppCorrea/comentario.html'
+    success_url = reverse_lazy('Leer Promociones')
+
+    def form_valid(self, form):
+        form.instance.comentario_id = self.kwargs['pk']
+        return super(ComentarioPagina, self).form_valid(form)

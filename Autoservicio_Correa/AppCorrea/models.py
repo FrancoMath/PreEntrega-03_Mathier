@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -40,11 +41,21 @@ class Promocion(models.Model):
     estado_promo = models.CharField(max_length=50)
     imagen_promo = models.ImageField(upload_to='imagenes_promo/', blank=True, null=True)
 
-
-
     def __str__(self):
         return f"Promo: {self.titulo_promo} \n - Fin: {self.fecha_fin} - Estado: {self.estado_promo} "
 
+
+class Comentario(models.Model):
+    comentario = models.ForeignKey(Promocion, related_name='comentarios', on_delete=models.CASCADE, null=True)
+    nombre = models.TextField(max_length=100)
+    mensaje = models.TextField(null=True, blank=True)
+    fecha_comentario = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-fecha_comentario']
+
+    def __str__(self):
+        return '%s - %s' % (self.nombre, self.comentario)
 
 # class Pedido(models.Model):
 #     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)

@@ -25,4 +25,6 @@ urlpatterns += [
     path('editar_pedido/<pk>/', class_views.Pedido_BasicoUpdateView.as_view(), name="Editar Pedido"),
     path('eliminar_pedido/<pk>/', class_views.Pedido_BasicoDeleteView.as_view(), name="Eliminar Pedido"),
     path('detalle_pedido/<pk>/', class_views.Pedido_BasicoDetailView.as_view(), name="Detalle Pedido"),
+
+    path('detalle_promocion/<int:pk>/comentario/', class_views.ComentarioPagina.as_view(), name='comentario'),
 ]
