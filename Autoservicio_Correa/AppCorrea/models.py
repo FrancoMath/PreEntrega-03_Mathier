@@ -29,6 +29,7 @@ class Pedido_Basico(models.Model):
     fecha_pedido = models.DateField()
     horario_entrega = models.CharField(max_length=100)
     detalle_pedido = models.TextField()
+    estado_pedido = models.CharField(max_length=50, default="Pendiente")
 
 class Promocion(models.Model):
     fecha_inicio = models.DateField()

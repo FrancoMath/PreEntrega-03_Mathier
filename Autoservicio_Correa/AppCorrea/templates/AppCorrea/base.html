@@ -30,14 +30,25 @@
                         <li class="nav-item"><a class="nav-link" href="">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
                         
+                        <!--Esto es para el cliente logueado-->
                         {% if user.is_authenticated %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mis Pedidos</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'Cargar Pedidos' %}">Cargar Pedidos</a></li>
+                                <li><a class="dropdown-item" href="{% url 'Cargar Pedido' %}">Cargar Pedido</a></li>
                                 <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Ver mis Pedidos</a></li>
+                                <li><a class="dropdown-item" href="{% url 'Leer Mis Pedidos' %}">Ver mis Pedidos</a></li>
                             </ul>
+
+                        <!-- Esto sería solo para el Admin-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Promociones</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{% url 'Cargar Promociones' %}">Cargar Promociones</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                 <li><a class="dropdown-item" href="{% url 'Leer Promociones' %}">Ver Promociones</a></li>
+                            </ul>
+                            
                         {% endif %}
 
 

@@ -31,11 +31,12 @@ def pedidos_basicos(request):
     if request.method == 'POST':
         pedido_basico = Pedido_Basico(cliente_pedido=request.POST['cliente_pedido'], 
         fecha_pedido=request.POST['fecha_pedido'],
-        horario_entrega=request.POST['horario_entrega'], detalle_pedido=request.POST['detalle_pedido'])
+        horario_entrega=request.POST['horario_entrega'], detalle_pedido=request.POST['detalle_pedido'],
+        estado_pedido=request.POST['estado_pedido'])
         pedido_basico.save()
         return render (request, "AppCorrea/index.html")
  
-    return render(request,"AppCorrea/cargar_pedidos.html")
+    return render(request,"AppCorrea/cargar_pedido.html")
 
 
 
@@ -55,6 +56,10 @@ def leer_promociones(request):
     return render(request, "AppCorrea/leer_promociones.html", contexto)
 
 
+def leer_mis_pedidos(request):
+    pedidos = Pedido_Basico.objects.all()
+    contexto = {"pedidos":pedidos}
+    return render(request, "AppCorrea/leer_mis_pedidos.html", contexto)
 
 
 
