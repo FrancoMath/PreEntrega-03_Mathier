@@ -38,6 +38,9 @@ class Promocion(models.Model):
     descripcion_promo = models.TextField()
     precio_promo = models.DecimalField(max_digits=8, decimal_places=2)
     estado_promo = models.CharField(max_length=50)
+    imagen_promo = models.ImageField(upload_to='imagenes_promo/', blank=True, null=True)
+
+
 
     def __str__(self):
         return f"Promo: {self.titulo_promo} \n - Fin: {self.fecha_fin} - Estado: {self.estado_promo} "

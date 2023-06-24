@@ -42,9 +42,14 @@ def pedidos_basicos(request):
 
 def promociones(request):
     if request.method == 'POST':
+        imagen_promo = request.FILES.get('imagen_promo')
+        if not imagen_promo:
+            imagen_promo = 'imagenes_promo\promo_generica.png'
+        
         promocion = Promocion(fecha_inicio=request.POST['fecha_inicio'], fecha_fin=request.POST['fecha_fin'],
         titulo_promo=request.POST['titulo_promo'], descripcion_promo=request.POST['descripcion_promo'], 
-        precio_promo=request.POST['precio_promo'], estado_promo=request.POST['estado_promo'], )
+        precio_promo=request.POST['precio_promo'], estado_promo=request.POST['estado_promo'], 
+        imagen_promo=imagen_promo)
         promocion.save()
         return render (request, "AppCorrea/index.html")
  

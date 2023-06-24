@@ -16,7 +16,7 @@
                     <div class="p-5">
                         <h2 class="display-6">
                             
-                            <form action="" method="POST">
+                            <form action="" method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
                                 <p>Fecha Inicio: <input type="date" name="fecha_inicio"></p>
                                 <p>Fecha Fin: <input type="date" name="fecha_fin"></p>
@@ -24,6 +24,7 @@
                                 <p>Precio Total: $ <input type="number" name="precio_promo"></p>
                                 <p>Estado: <input type="text" name="estado_promo"></p>
                                 <p>Descripción: <textarea type="text" name="descripcion_promo"></textarea></p>
+                                <p>Imagen: <input type="file" name="imagen_promo"></p><br>
 
                                 <input type="submit" value="Enviar" class="btn btn-primary">
                         
