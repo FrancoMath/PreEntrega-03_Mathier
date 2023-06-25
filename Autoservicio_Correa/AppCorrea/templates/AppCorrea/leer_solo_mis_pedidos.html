@@ -1,0 +1,35 @@
+{% extends 'AppCorrea/base.html' %}
+
+{% load static %}
+
+{% block title %} Leer Productos {% endblock title %}
+
+{% block main %}
+
+    <!-- Content section 1-->
+    <section id="scroll">
+        <div class="container px-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-12 order-lg-2">
+                </div>
+                <div class="col-lg-12 order-lg-1">
+                    <h2>Mis Pedidos</h2>
+                    <ul>
+                        {% for pedido in pedidos %}
+                            <li>{{ pedido.fecha_pedido }} - {{ pedido.detalle_pedido }}</li>
+                        {% empty %}
+                            <li>No hay pedidos.</li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock main %}
+
+
+

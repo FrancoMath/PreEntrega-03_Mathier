@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Producto, Cliente, Pedido, Promocion
+from .models import Producto, Cliente, Pedido, Promocion, MiPedido
+from .forms import FormularioMiPedido
 
 def inicio(request):
     return render(request, "AppCorrea/index.html")
@@ -64,6 +65,26 @@ def leer_mis_pedidos(request):
     pedidos = Pedido.objects.all()
     contexto = {"pedidos":pedidos}
     return render(request, "AppCorrea/leer_mis_pedidos.html", contexto)
+
+
+#pruebas
+def cargar_mis_pedido(request):
+    if request.method == 'POST':
+        form = FormularioMiPedido(request.POST)
+        if form.is_valid():
+            pedido = form.save(commit=False)
+            pedido.user = request.user
+            pedido.save()
+            return redirect('leer_solo_mis_pedidos')
+    else:
+        form = PedidoFFormularioMiPedidoorm()
+    return render(request, 'cargar_mis_pedidos.html', {'form': form})
+
+
+def leer_solo_mis_pedidos(request):
+    pedidos = MiPedido.objects.filter(user=request.user)
+    return render(request, 'leer_solo_mis_pedidos.html', {'pedidos': pedidos})
+
 
 
 

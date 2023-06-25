@@ -13,6 +13,9 @@ urlpatterns = [
     path('leer_promociones/', views.leer_promociones, name="Leer Promociones"),
     path('leer_mis_pedidos/', views.leer_mis_pedidos, name="Leer Mis Pedidos"),
     path('buscar/', views.buscar),
+
+    path('cargar_mis_pedidos/', views.cargar_mis_pedido, name='Cargar MIS Pedidos'),
+    path('leer_solo_mis_pedidos/', views.leer_solo_mis_pedidos, name='Leer solo mis Pedidos'),
 ]
 
 
