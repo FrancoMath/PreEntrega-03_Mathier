@@ -18,11 +18,11 @@
 
                             <form action="" method="POST">
                                 {% csrf_token %}
-                                <p>Nombre: <input type="text" name="cliente_pedido"></p>
+                                <p>Nombre y Apellido: <input type="text" name="cliente_pedido"></p>
                                 <p>Fecha Entrega: <input type="date" name="fecha_pedido"></p>
                                 <p>Horario Entrega: <input type="text" name="horario_entrega"></p>
-                                <p> Detalle Pedido: <textarea type="text" name="detalle_pedido"></textarea></p>
-                                <p> Horario Entrega: <input type="text" name="horario_entrega"></p>
+                                <!--p>Estado: <input type="text" name="estado_pedido"></p-->
+                                <p>Detalle Pedido: <textarea type="text" name="detalle_pedido"></textarea></p>
                                 <input type="submit" value="Enviar" class="btn btn-primary">
                         
                             </form>

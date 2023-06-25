@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Producto, Cliente, Pedido_Basico, Promocion
+from .models import Producto, Cliente, Pedido, Promocion
 
 def inicio(request):
     return render(request, "AppCorrea/index.html")
@@ -27,13 +27,12 @@ def clientes(request):
     return render(request,"AppCorrea/cargar_clientes.html")
 
 
-def pedidos_basicos(request):
+def pedidos(request):
     if request.method == 'POST':
-        pedido_basico = Pedido_Basico(cliente_pedido=request.POST['cliente_pedido'], 
+        pedido = Pedido(cliente_pedido=request.POST['cliente_pedido'], 
         fecha_pedido=request.POST['fecha_pedido'],
-        horario_entrega=request.POST['horario_entrega'], detalle_pedido=request.POST['detalle_pedido'],
-        estado_pedido=request.POST['estado_pedido'])
-        pedido_basico.save()
+        horario_entrega=request.POST['horario_entrega'], detalle_pedido=request.POST['detalle_pedido'])
+        pedido.save()
         return render (request, "AppCorrea/index.html")
  
     return render(request,"AppCorrea/cargar_pedido.html")
@@ -62,7 +61,7 @@ def leer_promociones(request):
 
 
 def leer_mis_pedidos(request):
-    pedidos = Pedido_Basico.objects.all()
+    pedidos = Pedido.objects.all()
     contexto = {"pedidos":pedidos}
     return render(request, "AppCorrea/leer_mis_pedidos.html", contexto)
 
@@ -78,9 +77,9 @@ def buscar_pedidos(request):
 def buscar(request):
     if request.GET["fecha_pedido"]:
         fecha_pedido = request.GET['fecha_pedido']
-        pedidos_basicos = Pedido_Basico.objects.filter(fecha_pedido__icontains=fecha_pedido)
+        pedidos = Pedido.objects.filter(fecha_pedido__icontains=fecha_pedido)
 
-        return render(request, "AppCorrea/leer_pedidos.html", {"pedidos_basicos":pedidos_basicos, 
+        return render(request, "AppCorrea/leer_pedidos.html", {"pedidos":pedidos, 
         "fecha_pedido":fecha_pedido})
     
     else:

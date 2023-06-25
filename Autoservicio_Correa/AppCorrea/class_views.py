@@ -1,7 +1,7 @@
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Promocion, Pedido_Basico, Comentario
+from .models import Promocion, Pedido, Comentario
 from .forms import FormularioComentario
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -27,27 +27,27 @@ class PromocionDeleteView(DeleteView):
     template_name = 'AppCorrea/eliminar_promocion.html'
 
 
-class Pedido_BasicoListView(ListView):
-    model = Pedido_Basico
+class PedidoListView(ListView):
+    model = Pedido
     template_name = "AppCorrea/leer_mis_pedidos.html"
 
 
-class Pedido_BasicoDetailView(LoginRequiredMixin, DetailView):
-    model = Pedido_Basico
+class PedidoDetailView(LoginRequiredMixin, DetailView):
+    model = Pedido
     template_name = "AppCorrea/detalle_pedido.html"
 
 
 
-class Pedido_BasicoUpdateView(UpdateView):
-    model = Pedido_Basico
+class PedidoUpdateView(UpdateView):
+    model = Pedido
     success_url = reverse_lazy("Leer Mis Pedidos")
     fields = ["id", "fecha_pedido", "horario_entrega", "detalle_pedido", 
     "estado_pedido",]
     template_name = "AppCorrea/editar_pedido.html"
 
 
-class Pedido_BasicoDeleteView(DeleteView):
-    model = Pedido_Basico
+class PedidoDeleteView(DeleteView):
+    model = Pedido
     success_url = reverse_lazy("Leer Mis Pedidos")
     template_name = 'AppCorrea/eliminar_pedido.html'
 

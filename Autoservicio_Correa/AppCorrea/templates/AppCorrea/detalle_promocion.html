@@ -37,7 +37,7 @@
                         No han comentado esta promo...
                     {% else %}
                         {% for comentario in promocion.comentarios.all %}
-                        <p><strong>{{comentario.nombre}}</strong></p>
+                        <p><strong>{{comentario.nombre}} {{comentario.apellido}}</strong></p>
                         <p>{{comentario.mensaje}}</p>
                         <p><small>{{comentario.fecha_comentario}}</small></p>
                         <hr>

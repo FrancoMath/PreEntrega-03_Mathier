@@ -7,7 +7,8 @@ from .models import Comentario
 class FormularioComentario(forms.ModelForm):
     class Meta:
         model = Comentario
-        fields = ('nombre', 'mensaje')
+        fields = ('nombre', 'apellido', 'mensaje')
         widgets = {'nombre': forms.TextInput(attrs={'class': 'form-control'}),
+        'apellido': forms.TextInput(attrs={'class': 'form-control'}),
         'mensaje' : forms.Textarea(attrs={'class': 'form-control'}),
         }

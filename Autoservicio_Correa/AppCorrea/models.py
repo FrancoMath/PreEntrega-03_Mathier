@@ -32,6 +32,13 @@ class Pedido_Basico(models.Model):
     detalle_pedido = models.TextField()
     estado_pedido = models.CharField(max_length=50, default="Pendiente")
 
+class Pedido(models.Model):
+    cliente_pedido = models.CharField(max_length=100)
+    fecha_pedido = models.DateField()
+    horario_entrega = models.CharField(max_length=100)
+    detalle_pedido = models.TextField()
+    estado_pedido = models.CharField(max_length=50, default="Pendiente")
+
 class Promocion(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -47,7 +54,8 @@ class Promocion(models.Model):
 
 class Comentario(models.Model):
     comentario = models.ForeignKey(Promocion, related_name='comentarios', on_delete=models.CASCADE, null=True)
-    nombre = models.TextField(max_length=100)
+    nombre = models.CharField(max_length=100)
+    apellido = models.CharField(max_length=100)
     mensaje = models.TextField(null=True, blank=True)
     fecha_comentario = models.DateTimeField(auto_now_add=True)
 
@@ -55,7 +63,7 @@ class Comentario(models.Model):
         ordering = ['-fecha_comentario']
 
     def __str__(self):
-        return '%s - %s' % (self.nombre, self.comentario)
+        return '%s - %s' % (self.nombre, self.appellido, self.comentario)
 
 # class Pedido(models.Model):
 #     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)

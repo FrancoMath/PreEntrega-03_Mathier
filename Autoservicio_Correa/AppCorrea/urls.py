@@ -5,7 +5,7 @@ urlpatterns = [
     path('', views.inicio, name="Inicio"),
     path('index/', views.inicio, name="Inicio"),
     path('cargar_clientes/', views.clientes, name="Cargar Clientes"),
-    path('cargar_pedido/', views.pedidos_basicos, name="Cargar Pedido"),
+    path('cargar_pedido/', views.pedidos, name="Cargar Pedido"),
     path('buscar_pedidos/', views.buscar_pedidos, name="Buscar Pedidos"),
     path('leer_productos/', views.leer_productos, name="Leer Productos"),
     path('cargar_productos/', views.productos, name="Cargar Productos"),
@@ -22,9 +22,9 @@ urlpatterns += [
     path('eliminar_promocion/<pk>/', class_views.PromocionDeleteView.as_view(), name="Eliminar Promocion"),
     path('detalle_promocion/<pk>/', class_views.PromocionDetailView.as_view(), name="Detalle Promocion"),
     
-    path('editar_pedido/<pk>/', class_views.Pedido_BasicoUpdateView.as_view(), name="Editar Pedido"),
-    path('eliminar_pedido/<pk>/', class_views.Pedido_BasicoDeleteView.as_view(), name="Eliminar Pedido"),
-    path('detalle_pedido/<pk>/', class_views.Pedido_BasicoDetailView.as_view(), name="Detalle Pedido"),
+    path('editar_pedido/<pk>/', class_views.PedidoUpdateView.as_view(), name="Editar Pedido"),
+    path('eliminar_pedido/<pk>/', class_views.PedidoDeleteView.as_view(), name="Eliminar Pedido"),
+    path('detalle_pedido/<pk>/', class_views.PedidoDetailView.as_view(), name="Detalle Pedido"),
 
     path('detalle_promocion/<int:pk>/comentario/', class_views.ComentarioPagina.as_view(), name='comentario'),
 ]
