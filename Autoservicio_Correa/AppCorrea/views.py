@@ -77,8 +77,7 @@ def cargar_mis_pedido(request):
             pedido.save()
             return render(request,"AppCorrea/leer_solo_mis_pedidos.html")
     else:
-        form = FormularioMiPedido
-        ()
+        form = FormularioMiPedido()
     return render(request, 'AppCorrea/cargar_mis_pedidos.html', {'form': form})
 
 
@@ -87,6 +86,10 @@ def leer_solo_mis_pedidos(request):
     return render(request, 'AppCorrea/leer_solo_mis_pedidos.html', {'pedidos': pedidos})
 
 
+def leer_todos_los_pedidos(request):
+    pedidos = MiPedido.objects.all()
+    contexto = {"pedidos":pedidos}
+    return render(request, "AppCorrea/leer_todos_los_pedidos.html", contexto)
 
 
 # def pedidos(request):
@@ -99,9 +102,9 @@ def buscar_pedidos(request):
 def buscar(request):
     if request.GET["fecha_pedido"]:
         fecha_pedido = request.GET['fecha_pedido']
-        pedidos = Pedido.objects.filter(fecha_pedido__icontains=fecha_pedido)
+        pedidos = MiPedido.objects.filter(fecha_pedido__icontains=fecha_pedido)
 
-        return render(request, "AppCorrea/leer_mis_pedidos.html", {"pedidos":pedidos, 
+        return render(request, "AppCorrea/leer_todos_los_pedidos.html", {"pedidos":pedidos, 
         "fecha_pedido":fecha_pedido})
     
     else:

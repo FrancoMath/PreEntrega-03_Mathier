@@ -18,9 +18,9 @@
                             
                             <form method="POST">
                                 {% csrf_token %}
-                               ¿Estas seguro/a de eliminar el pedido de entrega {{ pedido.fecha_pedido }}?<br>
+                               ¿Estas seguro/a de eliminar el pedido de entrega {{ mipedido.fecha_pedido }}?<br>
                                 <input type="submit" value="Si, Eliminar" class="btn btn-primary">
-                                <a href="{% url 'Leer Mis Pedidos' %}" class="btn btn-primary">No, Regresar</a></button>
+                                <a href="{% url 'Leer solo mis Pedidos' %}" class="btn btn-primary">No, Regresar</a></button>
                             </form>
                         
                         </h2>

@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %} Leer Productos {% endblock title %}
+{% block title %} Leer Pedidos {% endblock title %}
 
 {% block main %}
 
@@ -21,7 +21,6 @@
                                 <h5 class="card-title">{{ pedido.cliente_pedido }}</h5>
                                 <p class="card-text">Fecha Entrega: {{ pedido.fecha_pedido }}</p>
                                 <p class="card-text">Horario: {{ pedido.horario_entrega }}</p>
-                                <p class="card-text">Estado: {{ pedido.estado_pedido }}</p>
                                 <a href="{% url 'Detalle Pedido' pedido.id %}" class="btn btn-primary">Ver</a>
 
                                 <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->
@@ -32,13 +31,15 @@
                             {% endfor %}
                             {% else %}
                             <p>No hay pedidos disponibles</p>
-                            <a href="{% url 'Cargar MIS Pedidos' %}" class="btn btn-primary">Cargar Pedido</a>
+                            <a href="{% url 'Cargar Pedido' %}" class="btn btn-primary">Cargar Pedido</a>
                         {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
 {% endblock main %}
 

@@ -12,6 +12,7 @@ urlpatterns = [
     path('cargar_promocion/', views.promociones, name="Cargar Promociones"),
     path('leer_promociones/', views.leer_promociones, name="Leer Promociones"),
     path('leer_mis_pedidos/', views.leer_mis_pedidos, name="Leer Mis Pedidos"),
+    path('leer_todos_los_pedidos/', views.leer_todos_los_pedidos, name="Leer Pedidos"),
     path('buscar/', views.buscar),
 
     path('cargar_mis_pedidos/', views.cargar_mis_pedido, name='Cargar MIS Pedidos'),
