@@ -16,4 +16,4 @@ class FormularioComentario(forms.ModelForm):
 class FormularioMiPedido(forms.ModelForm):
     class Meta:
         model = MiPedido
-        fields = ('fecha_pedido', 'horario_entrega', 'lugar_entrega', 'detalle_pedido')
+        fields = ('nombre_apellido', 'fecha_pedido', 'horario_entrega', 'lugar_entrega', 'detalle_pedido')

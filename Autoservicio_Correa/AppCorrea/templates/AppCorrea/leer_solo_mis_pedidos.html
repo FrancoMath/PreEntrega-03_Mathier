@@ -18,7 +18,7 @@
                             {% for pedido in pedidos %}
                             <div class="card" style="width: 18rem;" >
                                 <div class="card-body">
-                                <h5 class="card-title">{{ pedido.cliente_pedido }}</h5>
+                                <h5 class="card-title">{{ pedido.nombre_apellido }}</h5>
                                 <p class="card-text">Fecha Entrega: {{ pedido.fecha_pedido }}</p>
                                 <p class="card-text">Horario: {{ pedido.horario_entrega }}</p>
                                 <p class="card-text">Estado: {{ pedido.estado_pedido }}</p>

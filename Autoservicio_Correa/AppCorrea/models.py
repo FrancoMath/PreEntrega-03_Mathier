@@ -42,6 +42,7 @@ class Pedido(models.Model):
 
 class MiPedido(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    nombre_apellido = models.CharField(max_length=100, null=True)
     fecha_pedido = models.DateField()
     horario_entrega = models.CharField(max_length=100)
     lugar_entrega = models.CharField(max_length=100)

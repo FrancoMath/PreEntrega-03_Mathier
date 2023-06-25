@@ -75,7 +75,7 @@ def cargar_mis_pedido(request):
             pedido = form.save(commit=False)
             pedido.user = request.user
             pedido.save()
-            return render(request,"AppCorrea/leer_solo_mis_pedidos.html")
+            return render(request,"AppCorrea/leer_solo_mis_pedidos.html") #cambiar esto para que vuelva la vista correcta
     else:
         form = FormularioMiPedido()
     return render(request, 'AppCorrea/cargar_mis_pedidos.html', {'form': form})
