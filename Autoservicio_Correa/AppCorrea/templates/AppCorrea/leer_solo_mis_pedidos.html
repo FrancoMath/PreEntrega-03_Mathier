@@ -13,21 +13,32 @@
                 <div class="col-lg-12 order-lg-2">
                 </div>
                 <div class="col-lg-12 order-lg-1">
-                    <h2>Mis Pedidos</h2>
-                    <ul>
-                        {% for pedido in pedidos %}
-                            <li>{{ pedido.fecha_pedido }} - {{ pedido.detalle_pedido }}</li>
-                        {% empty %}
-                            <li>No hay pedidos.</li>
-                        {% endfor %}
-                    </ul>
+                    <div class="row">
+                        {% if pedidos %}
+                            {% for pedido in pedidos %}
+                            <div class="card" style="width: 18rem;" >
+                                <div class="card-body">
+                                <h5 class="card-title">{{ pedido.cliente_pedido }}</h5>
+                                <p class="card-text">Fecha Entrega: {{ pedido.fecha_pedido }}</p>
+                                <p class="card-text">Horario: {{ pedido.horario_entrega }}</p>
+                                <p class="card-text">Estado: {{ pedido.estado_pedido }}</p>
+                                <a href="{% url 'Detalle Pedido' pedido.id %}" class="btn btn-primary">Ver</a>
 
+                                <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->
+                                <a href="{% url 'Editar Pedido' pedido.id %}" class="btn btn-primary">Editar</a>
+                                <a href="{% url 'Eliminar Pedido' pedido.id %}" class="btn btn-primary">Eliminar</a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <p>No hay pedidos disponibles</p>
+                            <a href="{% url 'Cargar Pedido' %}" class="btn btn-primary">Cargar Pedido</a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
 {% endblock main %}
 
