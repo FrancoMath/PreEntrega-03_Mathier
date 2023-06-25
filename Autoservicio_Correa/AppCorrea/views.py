@@ -79,7 +79,7 @@ def buscar(request):
         fecha_pedido = request.GET['fecha_pedido']
         pedidos = Pedido.objects.filter(fecha_pedido__icontains=fecha_pedido)
 
-        return render(request, "AppCorrea/leer_pedidos.html", {"pedidos":pedidos, 
+        return render(request, "AppCorrea/leer_mis_pedidos.html", {"pedidos":pedidos, 
         "fecha_pedido":fecha_pedido})
     
     else:

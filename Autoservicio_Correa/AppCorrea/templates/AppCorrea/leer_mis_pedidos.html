@@ -20,6 +20,7 @@
                                 <div class="card-body">
                                 <h5 class="card-title">{{ pedido.cliente_pedido }}</h5>
                                 <p class="card-text">Fecha Entrega: {{ pedido.fecha_pedido }}</p>
+                                <p class="card-text">Horario: {{ pedido.horario_entrega }}</p>
                                 <a href="{% url 'Detalle Pedido' pedido.id %}" class="btn btn-primary">Ver</a>
 
                                 <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->

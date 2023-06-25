@@ -20,7 +20,8 @@
                                 {% csrf_token %}
                                 {{ form.as_p }}
                                 <input type="submit" value="Actualizar" class="btn btn-primary">
-                                <a href="{% url 'Leer Mis Pedidos' %}" class="btn btn-primary">Regresar</a></button>
+                                <!--a href="{% url 'Leer Mis Pedidos' %}" class="btn btn-primary">Regresar</a></button-->
+                                <a href="#" class="btn btn-primary" onclick="history.back(); return false;">Regresar</a>
                             </form>
                         
                         </h2>
