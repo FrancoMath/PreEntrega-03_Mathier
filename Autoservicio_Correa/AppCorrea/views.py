@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Producto, Cliente, Pedido, Promocion, MiPedido
 from .forms import FormularioMiPedido
@@ -75,7 +75,7 @@ def cargar_mis_pedido(request):
             pedido = form.save(commit=False)
             pedido.user = request.user
             pedido.save()
-            return render(request,"AppCorrea/leer_solo_mis_pedidos.html") #cambiar esto para que vuelva la vista correcta
+            return redirect('Leer solo mis Pedidos') #cambiar esto para que vuelva la vista correcta
     else:
         form = FormularioMiPedido()
     return render(request, 'AppCorrea/cargar_mis_pedidos.html', {'form': form})
