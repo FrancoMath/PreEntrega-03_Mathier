@@ -25,6 +25,13 @@ class Cliente(models.Model):
         return f"Nombre: {self.nombre} - Apellido: {self.apellido} - Direccion: {self.direccion}"
 
 
+class Pedido_basico(models.Model):
+    cliente_pedido = models.CharField(max_length=100)
+    fecha_pedido = models.DateField()
+    horario_entrega = models.CharField(max_length=100)
+    detalle_pedido = models.TextField()
+    estado_pedido = models.CharField(max_length=50, default="Pendiente")
+
 class Pedido(models.Model):
     cliente_pedido = models.CharField(max_length=100)
     fecha_pedido = models.DateField()

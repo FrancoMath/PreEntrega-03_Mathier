@@ -75,15 +75,16 @@ def cargar_mis_pedido(request):
             pedido = form.save(commit=False)
             pedido.user = request.user
             pedido.save()
-            return redirect('leer_solo_mis_pedidos')
+            return render(request,"AppCorrea/leer_solo_mis_pedidos.html")
     else:
-        form = PedidoFFormularioMiPedidoorm()
-    return render(request, 'cargar_mis_pedidos.html', {'form': form})
+        form = FormularioMiPedido
+        ()
+    return render(request, 'AppCorrea/cargar_mis_pedidos.html', {'form': form})
 
 
 def leer_solo_mis_pedidos(request):
     pedidos = MiPedido.objects.filter(user=request.user)
-    return render(request, 'leer_solo_mis_pedidos.html', {'pedidos': pedidos})
+    return render(request, 'AppCorrea/leer_solo_mis_pedidos.html', {'pedidos': pedidos})
 
 
 
