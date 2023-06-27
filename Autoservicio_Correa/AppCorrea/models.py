@@ -49,6 +49,9 @@ class MiPedido(models.Model):
     estado_pedido = models.CharField(max_length=50, default="Pendiente")
     detalle_pedido = models.TextField()
 
+    class Meta:
+        ordering = ['-fecha_pedido']
+
 class Promocion(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
@@ -73,7 +76,7 @@ class Comentario(models.Model):
         ordering = ['-fecha_comentario']
 
     def __str__(self):
-        return '%s - %s' % (self.nombre, self.appellido, self.comentario)
+        return f"Nombre: {self.nombre} - Apellido: {self.apellido} - Fecha: {self.fecha_comentario} - {self.comentario}  "
 
 # class Pedido(models.Model):
 #     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)

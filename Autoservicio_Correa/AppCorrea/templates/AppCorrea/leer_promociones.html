@@ -23,9 +23,10 @@
                                     <p class="card-text">Precio: {{ promocion.precio_promo }}</p>
                                     <a href="{% url 'Detalle Promocion' promocion.id %}" class="btn btn-primary">Ver</a>
 
-                                    <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->
+                                    {% if user.is_superuser %}
                                     <a href="{% url 'Editar Promocion' promocion.id %}" class="btn btn-primary">Editar</a>
                                     <a href="{% url 'Eliminar Promocion' promocion.id %}" class="btn btn-primary">Eliminar</a>
+                                    {% endif%}
                                     </div>
                                 </div>
                                 {% endfor %}

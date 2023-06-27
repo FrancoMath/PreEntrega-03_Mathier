@@ -31,20 +31,25 @@
                 <br>
                 <div class="container">
                     <h4>Comentarios...</h4>
-                    <br>
                     <div class="container">
-                    {% if not promocion.comentarios.all %}
-                        No han comentado esta promo...
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'comentario' promocion.pk %}">Agrega un Comentario</a> <br>                
+                        {% if not promocion.comentarios.all %}
+                            No han comentado esta promo...
+                        {% else %}
+                        <br>
+                        <br>
+                            {% for comentario in promocion.comentarios.all %}
+                            <p><strong>{{comentario.nombre}} {{comentario.apellido}}</strong></p>
+                            <p>{{comentario.mensaje}}</p>
+                            <p><small>{{comentario.fecha_comentario}}</small></p>
+                            <hr>
+                            {% endfor %}
+                        {% endif %}
                     {% else %}
-                        {% for comentario in promocion.comentarios.all %}
-                        <p><strong>{{comentario.nombre}} {{comentario.apellido}}</strong></p>
-                        <p>{{comentario.mensaje}}</p>
-                        <p><small>{{comentario.fecha_comentario}}</small></p>
-                        <hr>
-                        {% endfor %}
+                    Para poder leer o dejar un comentario debes primero loguearte: <a href="{% url 'Login' %}">Ir a Login</a>
                     {% endif %}
-                    <a href="{% url 'comentario' promocion.pk %}">Agrega un Comentario</a-->
-                    </div>
+                </div>
                 </div>
                 </div>
             </div>

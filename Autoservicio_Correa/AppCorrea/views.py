@@ -3,29 +3,10 @@ from django.http import HttpResponse
 from .models import Producto, Cliente, Pedido, Promocion, MiPedido
 from .forms import FormularioMiPedido
 
+
 def inicio(request):
     return render(request, "AppCorrea/index.html")
 
-def productos(request):
-    if request.method == 'POST':
-        producto = Producto(nombre=request.POST['nombre'], precio=request.POST['precio'],
-        descripcion=request.POST['descripcion'], en_stock=request.POST['en_stock'], 
-        en_promocion=request.POST['en_promocion'], )
-        producto.save()
-        return render (request, "AppCorrea/index.html")
- 
-    return render(request,"AppCorrea/cargar_productos.html")
-
-
-def clientes(request):
-    if request.method == 'POST':
-        cliente = Cliente(nombre=request.POST['nombre'], apellido=request.POST['apellido'],
-        direccion=request.POST['direccion'], email=request.POST['email'], 
-        telefono=request.POST['telefono'], )
-        cliente.save()
-        return render (request, "AppCorrea/index.html")
- 
-    return render(request,"AppCorrea/cargar_clientes.html")
 
 
 def pedidos(request):
@@ -61,13 +42,14 @@ def leer_promociones(request):
     return render(request, "AppCorrea/leer_promociones.html", contexto)
 
 
+
 def leer_mis_pedidos(request):
     pedidos = Pedido.objects.all()
     contexto = {"pedidos":pedidos}
     return render(request, "AppCorrea/leer_mis_pedidos.html", contexto)
 
 
-#pruebas
+
 def cargar_mis_pedido(request):
     if request.method == 'POST':
         form = FormularioMiPedido(request.POST)
@@ -95,6 +77,7 @@ def leer_todos_los_pedidos(request):
 # def pedidos(request):
 #     return render(request, "AppCorrea/cargar_pedidos.html")
 
+
 def buscar_pedidos(request):
     return render(request, "AppCorrea/buscar_pedidos.html")
 
@@ -118,6 +101,26 @@ def buscar(request):
     # return HttpResponse(respuesta)
 
 
+def productos(request):
+    if request.method == 'POST':
+        producto = Producto(nombre=request.POST['nombre'], precio=request.POST['precio'],
+        descripcion=request.POST['descripcion'], en_stock=request.POST['en_stock'], 
+        en_promocion=request.POST['en_promocion'], )
+        producto.save()
+        return render (request, "AppCorrea/index.html")
+ 
+    return render(request,"AppCorrea/cargar_productos.html")
+
+
+def clientes(request):
+    if request.method == 'POST':
+        cliente = Cliente(nombre=request.POST['nombre'], apellido=request.POST['apellido'],
+        direccion=request.POST['direccion'], email=request.POST['email'], 
+        telefono=request.POST['telefono'], )
+        cliente.save()
+        return render (request, "AppCorrea/index.html")
+ 
+    return render(request,"AppCorrea/cargar_clientes.html")
 
 
 

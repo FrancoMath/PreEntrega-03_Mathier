@@ -26,37 +26,41 @@
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Beneficios</a></li>
+                        {% if not user.is_superuser %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Leer Promociones' %}">Promociones</a></li>
+                        {% endif %}
                         <li class="nav-item"><a class="nav-link" href="">Acerca de</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
                         
                         <!--Esto es para el cliente logueado-->
                         {% if user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mis Pedidos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'Cargar MIS Pedidos' %}">Cargar Pedido</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="{% url 'Leer solo mis Pedidos' %}">Ver mis Pedidos</a></li>
-                            </ul>
 
-                        <!-- Esto sería solo para el Admin-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Promociones</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'Cargar Promociones' %}">Cargar Promociones</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                 <li><a class="dropdown-item" href="{% url 'Leer Promociones' %}">Ver Promociones</a></li>
-                            </ul>
-                        
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{% url 'Leer Pedidos' %}">Ver pedidos</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="{% url 'Buscar Pedidos' %}">Buscar Pedidos</a></li>
-                            </ul>
-                                
+                            {% if not user.is_superuser %}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mis Pedidos</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'Cargar MIS Pedidos' %}">Cargar Pedido</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="{% url 'Leer solo mis Pedidos' %}">Ver mis Pedidos</a></li>
+                                </ul>
+                            {% else %}
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Promociones</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'Cargar Promociones' %}">Cargar Promociones</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="{% url 'Leer Promociones' %}">Ver Promociones</a></li>
+                                </ul>
+                            
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pedidos</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{% url 'Leer Pedidos' %}">Ver pedidos</a></li>
+                                    <li><hr class="dropdown-divider" /></li>
+                                    <li><a class="dropdown-item" href="{% url 'Buscar Pedidos' %}">Buscar Pedidos</a></li>
+                                </ul>
+                            {% endif %}
                         {% endif %}
 
 
@@ -119,7 +123,7 @@
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        <!-- Core theme JS>
+        <script src="js/scripts.js"></script-->
     </body>
 </html>

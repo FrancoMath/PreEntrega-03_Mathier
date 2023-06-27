@@ -6,11 +6,13 @@ from .forms import FormularioComentario
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
 class PromocionListView(ListView):
     model = Promocion
     template_name = "AppCorrea/leer_promociones.html"
 
-class PromocionDetailView(LoginRequiredMixin, DetailView):
+
+class PromocionDetailView(DetailView):
     model = Promocion
     template_name = "AppCorrea/detalle_promocion.html"
 
@@ -27,24 +29,21 @@ class PromocionDeleteView(DeleteView):
     template_name = 'AppCorrea/eliminar_promocion.html'
 
 
+
 class PedidoListView(ListView):
     model = MiPedido
     template_name = "AppCorrea/leer_solo_mis_pedidos.html"
-
 
 class PedidoDetailView(LoginRequiredMixin, DetailView):
     model = MiPedido
     template_name = "AppCorrea/detalle_pedido.html"
 
-
-
 class PedidoUpdateView(UpdateView):
     model = MiPedido
     success_url = reverse_lazy("Leer solo mis Pedidos")
-    fields = ["id", "nombre_apellido", "fecha_pedido", "horario_entrega", "detalle_pedido", 
+    fields = ["id", "nombre_apellido", "fecha_pedido", "horario_entrega", "lugar_entrega", "detalle_pedido", 
     "estado_pedido",]
     template_name = "AppCorrea/editar_pedido.html"
-
 
 class PedidoDeleteView(DeleteView):
     model = MiPedido
