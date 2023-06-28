@@ -20,17 +20,17 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">AUTOSERVICIO CORREA</a>
+                <a class="navbar-brand" href="{% url 'Inicio' %}">Autoservicio Correa</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Acerca de</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Beneficios</a></li>
                         {% if not user.is_superuser %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'Leer Promociones' %}">Promociones</a></li>
                         {% endif %}
+                        <li class="nav-item"><a class="nav-link" href="">Acerca de</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contacto</a></li>
                         
                         <!--Esto es para el cliente logueado-->
                         {% if user.is_authenticated %}
@@ -63,9 +63,27 @@
                             {% endif %}
                         {% endif %}
 
+
+                        <!--li class="nav-item"><a class="nav-link" href="{% url 'Cargar Clientes' %}">Cargar Clientes</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Cargar Productos' %}">Cargar Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Leer Productos' %}">Leer Productos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Buscar Pedidos' %}">Buscar Pedidos</a></li-->
+                        
+                        <!-- PRUEBAS-->
+                        <!--li class="nav-item"><a class="nav-link" href="#!">Conocenos</a></li-->
+                        <!--li class="nav-item"><a class="nav-link" href="#!">Iniciar sesión</a></li-->
+                        <!--li class="nav-item"><a class="nav-link" href="#!">Crear cuenta</a></li-->
+                        <!--li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Tienda</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#!">Todos los Productos</a></li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li><a class="dropdown-item" href="#!">Productos en Oferta</a></li>
+                                <li><a class="dropdown-item" href="#!">Nuevos Productos</a></li>
+                            </ul>
+                        </li-->
                     </ul>
                     
-                    <!--Esto es para el superuser-->
                     {% if request.user.is_authenticated %}
                     <a class="btn btn-outline-dark" href="{% url 'Editar_perfil' %}"><i class=""></i>Mi Perfil</a>
                     <a class="btn btn-outline-dark" href="{% url 'Logout' %}"><i class=""></i>Logout</a>
@@ -74,25 +92,30 @@
                     <a class="btn btn-outline-dark" href="{% url 'Register' %}"><i class=""></i>Registrarse</a>
                     {% endif %}
                     
+                    <!-- PARA ACTIVAR EL CARRITO DE COMPRAS-->
+                    <!--form class="d-flex">
+                        <button class="btn btn-outline-dark" type="submit">
+                            <i class="bi-cart-fill me-1"></i>
+                            Carrito
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                        </button>
+                    </form-->
                 </div>
             </div>
         </nav>
-
         <!-- Header-->
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Gracias por confiar</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">COMPRÁ DESDE CASA</p>
+                    <h1 class="display-4 fw-bolder">Comprá desde casa</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Gracias por confiar</p>
                 </div>
             </div>
         </header>
         <p>{{ mensaje }}</p>
-
-       
         <!-- Section--> 
+       
         {% block main %}
-
         {% endblock main %}
 
         <!-- Footer-->
