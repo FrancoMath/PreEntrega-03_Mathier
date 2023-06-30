@@ -16,13 +16,13 @@
                     <div class="p-5">
                         <h2 class="display-6">
                             
-                            Promoción: {{ promocion.titulo_promo }}<br>
-                            <img src="{{ promocion.imagen_promo.url}}" class="card-img-top" alt="...">
-                            Fecha Inicio: {{ promocion.fecha_inicio }}<br>
-                            Fecha Fin: {{ promocion.fecha_fin }}<br>
-                            Precio: $ {{ promocion.precio_promo }}<br>
-                            Estado: {{ promocion.estado_promo }}<br>
-                            Detalle: {{ promocion.descripcion_promo }}<br>
+                            <p><strong><u>Promoción:</strong></u> {{ promocion.titulo_promo }}
+                            <div><img src="{{ promocion.imagen_promo.url}}" class="card-img-top" alt="..." style="max-width: 300px; max-height: auto;"></div>
+                            <p><strong><u>Fecha Inicio:</strong></u> {{ promocion.fecha_inicio }}
+                            <p><strong><u>Fecha Fin:</strong></u> {{ promocion.fecha_fin }}
+                            <p><strong><u>Precio:</strong></u> $ {{ promocion.precio_promo_con_separador }}
+                            <p><strong><u> Estado:</strong></u> {{ promocion.estado_promo }}
+                            <p><strong><u>Detalle:</strong></u> {{ promocion.descripcion_promo }}<br>
                             <a href="{% url 'Leer Promociones' %}" class="btn btn-primary">Regresar</a></button>
                            
                         </h2>
@@ -47,7 +47,7 @@
                             {% endfor %}
                         {% endif %}
                     {% else %}
-                    Para poder leer o dejar un comentario debes primero loguearte: <a href="{% url 'Login' %}">Ir a Login</a>
+                    Para poder leer o dejar un comentario debes primero loguearte. <a href="{% url 'Login' %}">Ir a Login</a>
                     {% endif %}
                 </div>
                 </div>

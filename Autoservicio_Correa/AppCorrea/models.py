@@ -63,6 +63,9 @@ class Promocion(models.Model):
 
     def __str__(self):
         return f"Promo: {self.titulo_promo} \n - Fin: {self.fecha_fin} - Estado: {self.estado_promo} "
+    
+    def precio_promo_con_separador(self):
+        return "{:,}".format(self.precio_promo)
 
 
 class Comentario(models.Model):

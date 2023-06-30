@@ -20,7 +20,8 @@
                             {% csrf_token %}
         
                             {{ form.as_p }}
-                            <input type="submit" value="Enviar">
+                            <input type="submit" class="btn btn-primary" value="Enviar">
+                            <a href="{% url 'Register' %}" class="btn btn-primary">Registrarse</a></button>
 
                     </form>
                     </div>
