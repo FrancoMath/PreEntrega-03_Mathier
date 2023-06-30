@@ -6,30 +6,22 @@
 
 {% block main %}
 
-    <!-- Content section 1-->
-    <section id="scroll">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-12 order-lg-2">
-                </div>
-                <div class="col-lg-12 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-6">
-                            
-                            <form method="POST">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <input type="submit" value="Actualizar" class="btn btn-primary">
-                                <!--a href="{% url 'Leer Mis Pedidos' %}" class="btn btn-primary">Regresar</a></button-->
-                                <a href="#" class="btn btn-primary" onclick="history.back(); return false;">Regresar</a>
-                            </form>
-                        
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="container">
+
+    <h4>Editar Pedido</h4>
+    
+</div>
+
+<div class="container px-5">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Actualizar" class="btn btn-primary">
+        <a href="#" class="btn btn-primary" onclick="history.back(); return false;">Regresar</a>
+    </form>
+    </h2>
+</div>
+
 
 {% endblock main %}
 

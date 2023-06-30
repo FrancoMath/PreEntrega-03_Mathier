@@ -6,27 +6,23 @@
 
 {% block main %}
 
-    <!-- Content section 1-->
-    <section id="scroll">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-12 order-lg-2">
-                </div>
-                <div class="col-lg-12 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-6">
+<div class="container">
 
-                            <form method="POST">
-                                {% csrf_token %}
-                                {{ form }}
-                                <input type="submit" value="Cargar Pedido">
-                            </form>
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <h4>Cargar Pedido</h4>
+    
+</div>
+
+<div class="container">
+    <div class="form-group">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Cargar</button>
+            <a href="{% url 'Inicio' %}" class="btn btn-primary">Regresar</a></button>
+        </form>
+    </div>    
+</div>
+
 
 {% endblock main %}
 

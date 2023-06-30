@@ -6,38 +6,28 @@
 
 {% block main %}
 
-    <!-- Content section 1-->
-    <section id="scroll">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-6 order-lg-2">
-                </div>
-                <div class="col-lg-6 order-lg-1">
-                    <div class="p-5">
-                           <!-- action: representa la url a la que nos va a re-dirigir. Tiene prioridad
-    por sobre la redirección que podamos colocar en views.py -->
-                  
-                        <h1>Editar Perfil</h1>
-                        <h1>De: {{request.user.username}}</h1>
+<div class="container">
 
-                        <form action="" method="POST">{% csrf_token %}
-                          
-                            <table>
-                    
-                                {{ form.as_p }}
-                    
-                            </table>
-                    
-                            <input type="submit", value="Enviar">
+    <h4>Editar Perfil de {{request.user.username}}</h4>
+    
+</div>
 
-                        </form>
-                        <a class="btn btn-outline-dark" href="{% url 'Cambiar_password' %}"><i class=""></i>Cambiar Contraseña</a>
-                        <a class="btn btn-outline-dark" href="{% url 'Eliminar_perfil' user.id %}"><i class=""></i>Eliminar Perfil</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+<div class="container px-5">
+    <form action="" method="POST">{% csrf_token %}              
+        <table>
+            {{ form.as_p }}
+        </table>
+        <input type="submit", value="Actualizar" class="btn btn-primary">
+        <a href="{% url 'Inicio' %}" class="btn btn-primary m-2">Cancelar</a></button>
+    </form><br>
+        <a href="{% url 'Cambiar_password' %}" class="btn btn-primary">Cambiar Contraseña</a></button>
+        <a href="{% url 'Eliminar_perfil' user.id  %}" class="btn btn-primary">Eliminar Perfil</a></button>
+        
+
+
+</div>
+
 
 {% endblock main %}
 

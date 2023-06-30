@@ -6,30 +6,18 @@
 
 {% block main %}
 
-    <!-- Content section 1-->
-    <section id="scroll">
-        <div class="container px-5">
-            <div class="row gx-5 align-items-center">
-                <div class="col-lg-12 order-lg-2">
-                </div>
-                <div class="col-lg-12 order-lg-1">
-                    <div class="p-5">
-                        <h2 class="display-6">
-                            
-                            Cliente: {{ mipedido.nombre_apellido }}<br>
-                            Fecha Entrega: {{ mipedido.fecha_pedido }}<br>
-                            Horario Entrega: {{ mipedido.horario_entrega }}<br>
-                            Lugar Entrega: {{ mipedido.lugar_entrega }}<br>
-                            Detalle Pedido: {{ mipedido.detalle_pedido }}<br>
-                            <!--a href="{% url 'Leer Mis Pedidos' %}" class="btn btn-primary">Regresar</a></button-->
-                            <a href="#" class="btn btn-primary" onclick="history.back(); return false;">Regresar</a>
-                           
-                        </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+<div class="container px-5">
+    <div>
+        <p><strong><u>Cliente:</strong></u> {{ mipedido.nombre_apellido }}
+        <p><strong><u>Fecha Entrega:</strong></u> {{ mipedido.fecha_pedido }}
+        <p><strong><u>Horario Entrega:</strong></u> {{ mipedido.horario_entrega}}
+        <p><strong><u>Lugar Entrega:</strong></u> {{ mipedido.lugar_entrega }}
+        <p><strong><u>Estado:</strong></u> {{ mipedido.estado_pedido }}
+        <p><strong><u>Detalle Pedido:</strong></u> {{ mipedido.detalle_pedido }}<br><br>
+        <a href="#" class="btn btn-primary" onclick="history.back(); return false;">Regresar</a>
+    </div>
+</div>
 
 
 
