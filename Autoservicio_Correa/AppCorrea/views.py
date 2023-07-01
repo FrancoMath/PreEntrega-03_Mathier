@@ -95,10 +95,7 @@ def buscar(request):
     
     return HttpResponse(respuesta)
     
-    
-    
-    # respuesta = f"Estoy buscando pedidos con fecha: {request.GET['fecha_pedido']}"
-    # return HttpResponse(respuesta)
+
 
 
 def productos(request):

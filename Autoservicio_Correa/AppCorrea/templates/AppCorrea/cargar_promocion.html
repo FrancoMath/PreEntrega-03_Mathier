@@ -5,6 +5,11 @@
 {% block title %} Carga Promocion {% endblock title %}
 
 {% block main %}
+<div class="container">
+
+    <h4>Cargar Promoción</h4>
+    
+</div>
 
 <div class="container px-5">
     <form action="" method="POST" enctype="multipart/form-data">
@@ -16,6 +21,7 @@
         <p><strong><u>Estado:</strong></u> <input type="text" name="estado_promo"></p>
         <p><strong><u>Descripción:</strong></u> <textarea type="text" name="descripcion_promo"></textarea></p>
         <p><strong><u>Imagen:</strong></u> <input type="file" name="imagen_promo"></p><br>
+        <p>Todos los campos son obligatorios.</p>
         <input type="submit" value="Cargar" class="btn btn-primary">
     </form>
     </h2>

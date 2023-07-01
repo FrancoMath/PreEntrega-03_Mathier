@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User 
 
-from .models import Comentario, MiPedido
+from .models import Comentario, MiPedido, Promocion
 
 
 class FormularioComentario(forms.ModelForm):

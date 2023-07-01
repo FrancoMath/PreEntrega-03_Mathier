@@ -2,12 +2,17 @@
 
 {% load static %}
 
-{% block title %} Buscar Productos {% endblock title %}
+{% block title %} Buscar Pedidos {% endblock title %}
 
 {% block main %}
+<div class="container">
+
+    <h4>Buscar Pedidos</h4>
+    
+</div>
 
 <div class="container px-5">
-    <form action="/AppCorrea/buscar/" method="GET">                      
+    <form action="/buscar/" method="GET">                      
         <input type="date" name="fecha_pedido" id="fecha_pedido">
         <input type="submit" value="Buscar" class="btn btn-primary">
     </form>

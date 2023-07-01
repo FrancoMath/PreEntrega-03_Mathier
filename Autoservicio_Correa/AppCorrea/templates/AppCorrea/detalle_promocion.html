@@ -5,16 +5,20 @@
 {% block title %} Detalle Promoción {% endblock title %}
 
 {% block main %}
+<div class="container">
 
+    <h4>Detalle Promoción</h4>
+    
+</div>
 <div class="container px-5">
     <div>
-        <p><strong><u>Promoción:</strong></u> {{ promocion.titulo_promo }}
+        <p><strong><u>Promoción:</strong></u> {{ promocion.titulo_promo }}</p>
         <div><img src="{{ promocion.imagen_promo.url}}" class="card-img-top" alt="..." style="max-width: 300px; max-height: auto;"></div><br>
-        <p><strong><u>Fecha Inicio:</strong></u> {{ promocion.fecha_inicio }}
-        <p><strong><u>Fecha Fin:</strong></u> {{ promocion.fecha_fin }}
-        <p><strong><u>Precio:</strong></u> $ {{ promocion.precio_promo_con_separador }}
-        <p><strong><u> Estado:</strong></u> {{ promocion.estado_promo }}
-        <p><strong><u>Detalle:</strong></u> {{ promocion.descripcion_promo }}<br><br>
+        <p><strong><u>Fecha Inicio:</strong></u> {{ promocion.fecha_inicio }}</p>
+        <p><strong><u>Fecha Fin:</strong></u> {{ promocion.fecha_fin }}</p>
+        <p><strong><u>Precio:</strong></u> $ {{ promocion.precio_promo_con_separador }}</p>
+        <!--p><strong><u> Estado:</strong></u> {{ promocion.estado_promo }}</p-->
+        <p><strong><u>Detalle:</strong></u> {{ promocion.descripcion_promo }}</p><br>
         <a href="{% url 'Leer Promociones' %}" class="btn btn-primary">Regresar</a></button>              
     </div>
     <br>

@@ -5,10 +5,13 @@
 {% block title %} Leer Pedidos {% endblock title %}
 
 {% block main %}
+<div class="container">
 
-    <!-- Content section 1-->
-    <section id="scroll">
-        <div class="container px-5">
+    <h4>Leer Pedidos</h4>
+    
+</div>
+
+    <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-12 order-lg-2">
                 </div>
@@ -21,6 +24,7 @@
                                 <h5 class="card-title">{{ pedido.nombre_apellido }}</h5>
                                 <p class="card-text">Fecha Entrega: {{ pedido.fecha_pedido }}</p>
                                 <p class="card-text">Horario: {{ pedido.horario_entrega }}</p>
+                                <p class="card-text">Estado: {{ pedido.estado_pedido }}</p>
                                 <a href="{% url 'Detalle Pedido' pedido.id %}" class="btn btn-primary">Ver</a>
 
                                 <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->

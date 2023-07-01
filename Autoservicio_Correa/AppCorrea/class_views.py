@@ -40,7 +40,7 @@ class PedidoDetailView(LoginRequiredMixin, DetailView):
 
 class PedidoUpdateView(UpdateView):
     model = MiPedido
-    success_url = reverse_lazy("Leer solo mis Pedidos")
+    success_url = reverse_lazy("Leer Pedidos")
     fields = ["id", "nombre_apellido", "fecha_pedido", "horario_entrega", "lugar_entrega", "detalle_pedido", 
     "estado_pedido",]
     template_name = "AppCorrea/editar_pedido.html"

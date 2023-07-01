@@ -21,6 +21,9 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{ promocion.titulo_promo }}</h5>
                                         <p class="card-text">Precio: $ {{ promocion.precio_promo_con_separador }}</p>
+                                        {% if user.is_superuser %}
+                                        <p class="card-text">Fin: {{ promocion.fecha_fin }}</p>
+                                        {% endif%}
                                         <a href="{% url 'Detalle Promocion' promocion.id %}" class="btn btn-primary">Ver</a>
 
                                         {% if user.is_superuser %}
