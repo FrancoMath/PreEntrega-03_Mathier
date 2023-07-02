@@ -13,7 +13,7 @@ def promociones(request):
     if request.method == 'POST':
         imagen_promo = request.FILES.get('imagen_promo')
         if not imagen_promo:
-            imagen_promo = 'imagenes_promo\promo_generica.png'
+            imagen_promo = 'imagenes_promo\Promo_generica.png'
         
         promocion = Promocion(fecha_inicio=request.POST['fecha_inicio'], fecha_fin=request.POST['fecha_fin'],
         titulo_promo=request.POST['titulo_promo'], descripcion_promo=request.POST['descripcion_promo'], 

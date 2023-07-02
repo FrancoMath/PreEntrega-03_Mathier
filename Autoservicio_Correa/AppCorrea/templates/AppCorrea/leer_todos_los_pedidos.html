@@ -29,15 +29,13 @@
 
                                 <!-- Estas opciones limitarlas para el staff y evitar hacer otro html-->
                                 <a href="{% url 'Editar Pedido' pedido.id %}" class="btn btn-primary">Editar</a>
-                                <a href="{% url 'Eliminar Pedido' pedido.id %}" class="btn btn-primary">Eliminar</a>
                                 </div>
                             </div>
                             {% endfor %}
                             {% else %}
                             <p>No hay pedidos disponibles</p>
-                            <a href="{% url 'Cargar Pedido' %}" class="btn btn-primary">Cargar Pedido</a>
                         {% endif %}
-                    </div>
+                    </div>  
                 </div>
             </div>
         </div>
