@@ -2,41 +2,48 @@
 #### Comisión: 40450
 #### Alumno: Franco Mathier
 
+
 ## Nombre del Proyecto
 Autoservicio Correa - Pedidos y Promociones
+
 
 ## Versión
 1.0
 
+
 ## Descripción del Proyecto
-Sitio web generado para uso de clientes del Autoservicio Correa.
+Sitio web generado para uso de clientes y staff del Autoservicio Correa. Se aprovechó el proyecto para usar distintas opciones para cargar formularios, vistas y registros.
 
-En esta web, los clientes que no cuenten con un usuario podrán conocer los Beneficios, datos de Contacto y Promociones vigentes en el Autoservicio. Sin embargo, para poder realizar un pedido o comprar una promoción, deberán registrarse e iniciar sesión.
-
-
-
-Página Web destinada a usuarios que deseen vender o permutar instrumentos musicales.
-
-A fin de navegar por las secciones de la página web, el usuario será requerido iniciar sesión o registrarse en caso de no contar con usuario o contraseña. En ambas opciones, una vez la página valide la autenticación del usuario, este será redirigido al inicio de la página web.
-
-Los usuarios pueden realizar las siguientes accciones:
-- Publicar instrumentos musicales
-- Visualizar instrumentos musicales publicados, los cuales están distribuidos en las secciones "Guitarras", "Bajos", "Pedales", "Amplificadores", "Teclados" y "Otros"
-- Comentar instrumentos musicales
+En esta web, los CLIENTES que no cuenten con un usuario podrán conocer los Beneficios, datos de Contacto y Promociones vigentes en el Autoservicio. Además, quienes se registren e inicien sesión podrán realizar pedidos o comprar una promoción.
+Funcionalidades para usuarios logueados:
+- Visualiza y comentar promociones
+- Leer comentarios de otros usuarios en las promociones
+- Cargar pedidos de compras y hacer seguimiento del estado del mismo
+- Ver todos los pedidos cargados por el usuario, y eliminarlos en caso de ser necesario
 - Editar el perfil de Usuario
 - Cambiar la contraseña de Usuario
-- Cerrar Sesión
-- Login en caso de haber cerrado sesión
+- Cerrar sesión
+- Iniciar sesión
 
-Nota: La opción de editar y eliminar instrumentos musicales solo le está permitido al autor de la publicación del instrumento.
-
-
+Quienes sean parte del staff de Autoservicio, podrán tener acceso a funcionalidades distintas al resto de usuarios. En esta entrega se modela mediante el rol de superuser, pero en futuras versiones se pretende tener grupos de usuarios y roles específicos. El staff tiene estas otras funcionalidades:
+- Cargar, editar y eliminar promociones
+- Visualizar los pedidos de todos los usuarios, así como tambien editarlos
+- Buscar pedidos por su fecha de entrega
 
 
 ## Pruebas Realizadas
-
+Se hicieron pruebas de uso teniendo en cuenta el perfil de cliente y el de staff. En el archivo "Casos de prueba.xlsx" se deja registro de las mismas. Se puede ubicar en la carpeta de proyecto del repositorio https://github.com/FrancoMath/ProyectoFinal_Mathier dentro de la rama "Proyecto_Final_Entregado"
 
 ## Video Demostración
+
+
+# .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- #
+## Funcionalidades futuras
+Se dejan algunas clases y tablas generadas para próximas versiones del código, del cual se espera:
+. Visualizar productos en stock, precios y características
+. Listado de favoritos y compras semanales
+. Perfil de clientes con más datos personales
+. Actualización de precios mediante ingreso de archivo .xlsx
 
 
 
