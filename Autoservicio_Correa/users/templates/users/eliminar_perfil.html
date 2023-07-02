@@ -19,7 +19,7 @@
 
                         <form action="{% url 'Eliminar_perfil' user.id %}" method="POST" class="m-2">
                              {% csrf_token %}
-                            <p>¿Desea eliminar el perfil?</p>
+                            <p>¿Deseas eliminar el perfil?</p>
                             <input type="submit" value="Confirmar" class="btn btn-primary">
                             <a href="{% url 'Inicio' %}"><button class="btn btn-primary m-2" type="button">Cancelar</button></a>
                          </form>

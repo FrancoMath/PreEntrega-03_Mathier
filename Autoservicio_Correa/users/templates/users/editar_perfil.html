@@ -22,7 +22,9 @@
         <a href="{% url 'Inicio' %}" class="btn btn-primary m-2">Cancelar</a></button>
     </form><br>
         <a href="{% url 'Cambiar_password' %}" class="btn btn-primary">Cambiar Contraseña</a></button>
+        {% if not user.is_superuser %}
         <a href="{% url 'Eliminar_perfil' user.id  %}" class="btn btn-primary">Eliminar Perfil</a></button>
+        {% endif %}
         
 
 

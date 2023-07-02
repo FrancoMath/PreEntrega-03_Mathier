@@ -31,7 +31,7 @@ def login_request(request):
             else:
                 return render(request, "AppCorrea/index.html", {"mensaje":"Datos incorrectos"})
         else:
-            return render(request, "users/login.html", {"mensaje":"Datos incorrectos. ¿Cómo deseas continuar?"})
+            return render(request, "AppCorrea/index.html", {"mensaje":"Datos incorrectos. Intentar nuevamente o registrarse."})
 
     form = AuthenticationForm()
 
