@@ -50,7 +50,7 @@ class Comentario(models.Model):
 
 
 
- # Clases para evolutivos (NO es parte del Proyecto Final CODER)
+# Clases para evolutivos (NO es parte del Proyecto Final CODER)
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.DecimalField(max_digits=8, decimal_places=2)

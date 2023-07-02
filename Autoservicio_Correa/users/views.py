@@ -46,7 +46,7 @@ def register(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             form.save()
-            return render(request,"AppCorrea/index.html" ,  {"mensaje":"Usuario Creado :)"})
+            return render(request,"AppCorrea/index.html" ,  {"mensaje":"Usuario Creado. Ahora, puedes Iniciar Sesión"})
 
     else:     
         form = forms.UserRegisterForm()     
