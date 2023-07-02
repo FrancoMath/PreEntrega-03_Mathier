@@ -4,17 +4,13 @@ from AppCorrea import views, class_views
 urlpatterns = [
     path('', views.inicio, name="Inicio"),
     path('index/', views.inicio, name="Inicio"),
-    path('cargar_clientes/', views.clientes, name="Cargar Clientes"),
-    path('cargar_pedido/', views.pedidos, name="Cargar Pedido"),
+    path('buscar/', views.buscar),
     path('buscar_pedidos/', views.buscar_pedidos, name="Buscar Pedidos"),
-    path('leer_productos/', views.leer_productos, name="Leer Productos"),
-    path('cargar_productos/', views.productos, name="Cargar Productos"),
+
     path('cargar_promocion/', views.promociones, name="Cargar Promociones"),
     path('leer_promociones/', views.leer_promociones, name="Leer Promociones"),
-    path('leer_mis_pedidos/', views.leer_mis_pedidos, name="Leer Mis Pedidos"),
-    path('leer_todos_los_pedidos/', views.leer_todos_los_pedidos, name="Leer Pedidos"),
-    path('buscar/', views.buscar),
 
+    path('leer_todos_los_pedidos/', views.leer_todos_los_pedidos, name="Leer Pedidos"),
     path('cargar_mis_pedidos/', views.cargar_mis_pedido, name='Cargar MIS Pedidos'),
     path('leer_solo_mis_pedidos/', views.leer_solo_mis_pedidos, name='Leer solo mis Pedidos')
 ]

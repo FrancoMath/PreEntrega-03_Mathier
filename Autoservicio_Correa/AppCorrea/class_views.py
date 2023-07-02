@@ -7,10 +7,10 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
+# Promociones
 class PromocionListView(ListView):
     model = Promocion
     template_name = "AppCorrea/leer_promociones.html"
-
 
 class PromocionDetailView(DetailView):
     model = Promocion
@@ -29,7 +29,7 @@ class PromocionDeleteView(DeleteView):
     template_name = 'AppCorrea/eliminar_promocion.html'
 
 
-
+# Pedidos
 class PedidoListView(ListView):
     model = MiPedido
     template_name = "AppCorrea/leer_solo_mis_pedidos.html"
@@ -51,10 +51,7 @@ class PedidoDeleteView(DeleteView):
     template_name = 'AppCorrea/eliminar_pedido.html'
 
 
-
-
-
-
+# Comentarios
 class ComentarioPagina(LoginRequiredMixin, CreateView):
     model = Comentario
     form_class = FormularioComentario

@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User 
 
-from .models import Comentario, MiPedido, Promocion
+from .models import Comentario, MiPedido
 
-
+# Formulario para Comentarios
 class FormularioComentario(forms.ModelForm):
     class Meta:
         model = Comentario
@@ -13,6 +13,8 @@ class FormularioComentario(forms.ModelForm):
         'mensaje' : forms.Textarea(attrs={'class': 'form-control'}),
         }
 
+
+# Formulario para Pedidos (feature)
 class FormularioMiPedido(forms.ModelForm):
     class Meta:
         model = MiPedido

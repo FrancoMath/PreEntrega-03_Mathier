@@ -18,7 +18,7 @@ def login_request(request):
     if request.method == 'POST':
         form = AuthenticationForm(request, data = request.POST)
 
-        if form.is_valid():  # Si pasó la validación de Django
+        if form.is_valid(): 
 
             usuario = form.cleaned_data.get('username')
             contrasenia = form.cleaned_data.get('password')
@@ -42,15 +42,13 @@ def register(request):
 
     if request.method == 'POST':
 
-        #form = UserCreationForm(request.POST)
         form = forms.UserRegisterForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             form.save()
             return render(request,"AppCorrea/index.html" ,  {"mensaje":"Usuario Creado :)"})
 
-    else:
-        #form = UserCreationForm()       
+    else:     
         form = forms.UserRegisterForm()     
 
     return render(request,"users/register.html" ,  {"form":form})
