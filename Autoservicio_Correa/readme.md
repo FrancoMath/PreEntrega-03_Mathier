@@ -10,6 +10,8 @@ Autoservicio Correa - Pedidos y Promociones
 ## Versión
 1.0
 
+## Observaciones
+Comparto la DB para que tengan casos de ejemplo para revisar. Recuerdo que hay tablas que serán para futuras aplicaciones.
 
 ## Descripción del Proyecto
 Sitio web generado para uso de clientes y staff del Autoservicio Correa. Se aprovechó el proyecto para usar distintas opciones para cargar formularios, vistas y registros.
