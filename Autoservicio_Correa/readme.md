@@ -34,7 +34,9 @@ Quienes sean parte del staff de Autoservicio, podrán tener acceso a funcionalid
 ## Pruebas Realizadas
 Se hicieron pruebas de uso teniendo en cuenta el perfil de cliente y el de staff. En el archivo "Casos de prueba.xlsx" se deja registro de las mismas. Se puede ubicar en la carpeta de proyecto del repositorio https://github.com/FrancoMath/ProyectoFinal_Mathier dentro de la rama "Proyecto_Final_Entregado"
 
+
 ## Video Demostración
+https://youtu.be/bCn4e8JdlFo
 
 
 # .-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.- #
